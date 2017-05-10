@@ -1,5 +1,7 @@
 'use strict';
 
+import '../imports/ui/body.js';
+/*
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
@@ -18,3 +20,4 @@ Template.hello.events({
         cnt.set(cnt.get() + 1);
     },
 });
+*/
