@@ -1,5 +1,6 @@
 'use strict';
 
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
@@ -37,7 +38,12 @@ Template.body.events({
         const text = target.text.value;
 
         // insert to DB.
-        Tasks.insert({ text, createdAt: new Date() });
+        Tasks.insert({
+            text,
+            createdAt: new Date(),
+            owner: Meteor.userId(),
+            username: Meteor.user().username,
+        });
 
         // clear form.
         target.text.value = '';
